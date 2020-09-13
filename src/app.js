@@ -5,20 +5,17 @@ const taskRoutes = require("./routes/task-routes.js");
 
 const app = express();
 
-require('dotenv').config()
-const port = process.env.PORT
-
 app.use(express.json()); // json post requestlerini parse etmek ve json data göndermek için kullanırız.- gelen json dataları otomatik olarak parse eder.
 app.use("/users", userRoutes);
 app.use("/tasks", taskRoutes);
 // ------------------------------------------ ******  Routes ******** ----------------------------
 
-app.get("/", (req, res) => {
-	res.send("selamlar...");
-});
+// app.get("/", (req, res) => {
+// 	res.send("Task Manager API");
+// });
 
-// Sunucuyu dinle...
-app.listen(port, () => console.log("Server is up on port: " + port));
+
+module.exports = app;
 
 // ------------------ playground ------------
 
